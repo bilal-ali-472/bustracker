@@ -11,6 +11,9 @@ class AuthenticationBloc
   AuthenticationBloc() : super(AuthenticationInitial()) {
     on<AuthenticationEvent>((event, emit) async {
       if (event is LoginStudentEvent) { 
+        print(event.email);
+        print(event.password);
+        print(event);
         final FirebaseAuth auth = FirebaseAuth.instance;
         try {
           await auth.signInWithEmailAndPassword(
@@ -18,6 +21,7 @@ class AuthenticationBloc
               email: event.email, password: event.password);
               emit(LoginSuccess());
         } on FirebaseAuthException catch (e) {
+          print("00000000000000000000000000000000000000000");
           print(e.code);
           emit (LoginFailed(Error_Message: e.code));
         }

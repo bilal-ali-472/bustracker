@@ -9,8 +9,8 @@ import 'package:bustracker/counter/counter.dart';
 import 'package:bustracker/l10n/l10n.dart';
 import 'package:bustracker/routes/app_router.dart';
 import 'package:bustracker/splash.dart';
-import 'package:bustracker/student/homepage.dart';
-import 'package:bustracker/student/login/login.dart';
+import 'package:bustracker/student/Screens/homepage.dart';
+import 'package:bustracker/student/login/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -20,6 +20,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter().onGenerateRoute,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: Color.fromARGB(255, 243, 250, 253)),
